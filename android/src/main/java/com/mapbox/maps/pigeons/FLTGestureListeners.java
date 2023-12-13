@@ -190,19 +190,19 @@ public class FLTGestureListeners {
     }
     public void onLongTap(@NonNull ScreenCoordinate coordinateArg, @NonNull Map<String, Object> pointArg, @NonNull Reply<Void> callback) {
       BasicMessageChannel<Object> channel =
-          new BasicMessageChannel<>(
-              binaryMessenger, "dev.flutter.pigeon.mapbox_maps_flutter.GestureListener.onLongTap", getCodec());
+        new BasicMessageChannel<>(
+          binaryMessenger, "dev.flutter.pigeon.mapbox_maps_flutter.GestureListener.onLongTap", getCodec());
       channel.send(
-          new ArrayList<Object>(Arrays.asList(coordinateArg, pointArg))
-          channelReply -> callback.reply(null));
+        new ArrayList<Object>(Arrays.asList(coordinateArg, pointArg)),
+        channelReply -> callback.reply(null));
     }
     public void onScroll(@NonNull ScreenCoordinate coordinateArg, @NonNull Map<String, Object> pointArg, @NonNull Reply<Void> callback) {
       BasicMessageChannel<Object> channel =
-          new BasicMessageChannel<>(
-              binaryMessenger, "dev.flutter.pigeon.mapbox_maps_flutter.GestureListener.onScroll", getCodec());
+        new BasicMessageChannel<>(
+          binaryMessenger, "dev.flutter.pigeon.mapbox_maps_flutter.GestureListener.onScroll", getCodec());
       channel.send(
-          new ArrayList<Object>(Arrays.asList(coordinateArg, pointArg)),
-          channelReply -> callback.reply(null));
+        new ArrayList<Object>(Arrays.asList(coordinateArg, pointArg)),
+        channelReply -> callback.reply(null));
     }
   }
 }
